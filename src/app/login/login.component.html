@@ -5,11 +5,10 @@
 </md-toolbar>
 
 <form novalidate (ngSubmit)="onSubmit()" #loginForm="ngForm">
-
   <md-dialog-content>
     <p>
       <md-input-container dividerColor="{{username.invalid && !username.pristine ? 'warn' : 'primary'}}">
-        <input mdInput placeholder="Username" type="text" [(ngModel)]="user.username" name="username" <div id="user"></div>name="ngModel" required>
+        <input mdInput placeholder="Username" type="text" [(ngModel)]="user.username" name="username" #username="ngModel" required>
         <md-hint>
           <span [hidden]="username.pristine">
           <span [hidden]="!username.errors?.required">username is required</span>
